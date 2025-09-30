@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header{
+  position: relative;
+  display: flex;
+  justify-content: center; /* centraliza a logo */
+  align-items: center;
+  padding: 20px;
+  background-color: #0f0f1e;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+header nav {
+  margin-left: auto; /* empurra o nav pro canto direito */
+}
+
+
+header nav ul {
+    list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+display: inline-block;
+    cursor: pointer;
+}
+
+header nav ul li::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background-color: #00f7ff;
+    transition: width 0.5s ease;
+
+
+}
+
+header nav ul li:hover::after {
+    width: 100%;
+    color: #00f7ff;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #121212;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.6),
+    /* dourado */ 0 0 15px rgba(255, 215, 0, 0.4);
+  box-shadow: 5px 5px 10px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  transition: all 0.3s ease-in-out;
+}
+.logo:hover {
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0px 6px 15px rgba(255, 215, 0, 0.6);
+  transform: translateX(-50%) scale(1.05);/* mantém no centro */
+}
+
+body {
+  background-color: #1a1a2e;
+  color: #b0b0b0;
+}
+
+.container {
+  /* 👉 Isso garante que os blocos nunca fiquem colados e se adaptem ao tamanho da tela.*/
+  flex: 1;  /* ocupa o espaço disponível */
+  display: flex;
+  flex-direction: column; /*itens um embaixo do outro */
+  align-items: center; /*centraliza horizontalmente */
+  justify-content: center; /* centraliza verticalmente */
+  gap: 30px; /* espaço entre os blocos */
+  padding: 20px;
+  max-width: 600px; /*largura máxima */
+  margin: 0 auto; /*centraliza no meio da tela*/
+}
+
+section {
+  /* Cada section tem caixinha com borda e espaçamento */
+  /* Centralização com flex */
+  display: flex;
+  justify-content: center; /* centraliza na horizontal */
+  align-items: center; /* centraliza na vertical */
+  /* -----*/
+  margin-top: 40px;
+  background-color: #22223b;
+  padding: 15px;
+  min-height: auto;
+  border-radius: 10px;
+  width: 100%; /* ocupa toda a largura do container */
+  text-align: center; /* centraliza os elementos dentro */
+  box-shadow: 5px 5px 10px;
+  gap: 10px;
+  max-width: 600px;
+}
+
+button {
+  background: linear-gradient(135deg, #00f2fe, #4facfe); /* degrade azul/aqua */
+  color: #121212;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 242, 254, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffd700, #ff9a00); /* muda pra dourado */
+  color: #fff;
+  box-shadow: 0px 6px 15px rgba(255, 215, 0, 0.6);
+}
+
+/* Para dar efeito de clique */
+button:active {
+  transform: scale(0.95);
+}
+
+#restart {
+  font-size: 0.9rem; /* menor que os outros */
+  padding: 6px 12px; /* reduz espaço interno */
+  background: #ff4b5c; /* cor destacada */
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(255, 75, 92, 0.4);
+}
+#restart:hover {
+  background: #ff6b81;
+}
+
+section#contador {
+  flex-direction: column; /* um embaixo do outro */
+  gap: 15px;
+}
+section#calculadora {
+  flex-direction: column; /* um embaixo do outro */
+  gap: 15px;
+}
+
+input[type="text"] {
+  background-color: #1f1f2e; /* fundo escuro */
+  color: #fff; /* texto branco */
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: 2px solid #4facfe; /* borda azul aqua */
+  border-radius: 8px;
+  outline: none; /* remove borda padrão */
+  box-shadow: 0px 4px 10px rgba(0, 242, 254, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+#saida {
+  margin-top: 15px;/* espaço entre input e saída */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00f2fe;
+  text-shadow: 0 0 5px rgba(0, 242, 254, 0.5);
+  transition: all 0.3s ease-in-out;
+  max-width: 250px;
+  max-height: 80px;
+  overflow-y: auto; /* cria barra de rolagem vertical */
+}
+
+input[type="text"]:focus{
+  border-color: #ffd700; /* dourado no foco */;
+  box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
+  color: #ffd700;
+}
+
+p, span {
+  font-size: 1.2rem;
+  font-weight:bold;
+  color:#b0e0e6; /* tom aqua claro */
+  text-shadow:0 0 5px rgba(0, 242, 254, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+#resultado{
+  font-size: 1.2rem;
+  color: #ffd700;  /* dourado para chamar atenção */
+  font-weight: bold;
+}
+input#TEXTO::placeholder {
+  font-size: 0.9rem;
+  font-weight:bold;
+  color:#b0e0e6; /* tom aqua claro */
+  text-shadow:0 0 5px rgba(0, 242, 254, 0.3);
+  transition: all 0.3s ease-in-out;
+
+}
+input[type="number"] {
+  background-color: #1f1f2e; /* fundo escuro */
+  color: #fff; /* texto branco */
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: 2px solid #4facfe; /* borda azul aqua */
+  border-radius: 8px;
+  outline: none; /* remove borda padrão */
+  box-shadow: 0px 4px 10px rgba(0, 242, 254, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="number"]::placeholder{
+  font-size: 0.9rem;
+  font-weight:bold;
+  color:#b0e0e6; /* tom aqua claro */
+  text-shadow:0 0 5px rgba(0, 242, 254, 0.3);
+  transition: all 0.3s ease-in-out;
+
+}
+input[type="number"]:focus {
+   border-color: #ffd700; /* dourado no foco */;
+  box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.4);
+  color: #ffd700;
+  transition: all 0.3s ease-in-out;
+  
+
+}
+
+#valor {
+  transition: all 0.3s ease-in-out;
+}
+
+#Previa {
+  flex-direction: column;/* empilha input e saída */
+  align-items: center;/* centraliza */
+  gap: 10px;/* espaço entre eles */
+}
+
+#tema {
+  display: flex;
+  justify-content: flex-end; /* joga pro canto direito */
+  padding: 10px 20px;
+}
+#toggleTema {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+
+
+
+/* Tema escuro (padrão) */
+body {
+  background-color: #1a1a2e;
+  color: #b0b0b0;
+  min-height: 100vh; /* ocupa a altura inteira da tela */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tema claro */
+body.light {
+  background-color: #f9fafb; /* fundo quase branco */
+  color: #111827;           /* texto bem escuro */
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+body.light section {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* sombra bem leve */
+  border-radius: 10px;
+}
+
+body.light .logo {
+  background: linear-gradient(135deg, #f59e0b, #f97316); /* dourado -> laranja */
+  color: #ffffff; /* contraste no logo */
+  text-shadow: 0 0 8px rgba(249, 115, 22, 0.5);
+}
+
+body.light button {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4); /* azul -> ciano */
+  color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(59, 130, 246, 0.25);
+}
+
+body.light button:hover {
+  background: linear-gradient(135deg, #2563eb, #0891b2); /* azul mais escuro */
+}
+
+
+
