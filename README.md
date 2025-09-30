@@ -14,7 +14,7 @@
 
 ## 📸 Screenshot
 
-![Preview do Projeto](.Fotosite.png)
+![Preview do Projeto](./Fotosite.png)
 
 ---
 
