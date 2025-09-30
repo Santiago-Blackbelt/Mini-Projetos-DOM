@@ -14,7 +14,7 @@
 
 ## 📸 Screenshot
 
-![Preview do Projeto](./Fotosite.png)
+![Preview do Projeto](./imagem_2025-09-30_154451961.png)
 
 ---
 
